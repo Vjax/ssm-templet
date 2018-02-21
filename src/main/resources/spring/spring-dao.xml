@@ -9,7 +9,7 @@
     <!-- 配置整合mybatis过程 -->
     <!-- 1.配置数据库相关参数properties的属性：${url} -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <context:component-scan base-package="com.smart.dao"/>
+    <context:component-scan base-package="com.example.dao"/>
     <!--2.数据库连接池-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!-- 配置连接池属性-->
@@ -36,7 +36,7 @@
         <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
         <!--扫描entity包 使用别名-->
-        <property name="typeAliasesPackage" value="com.smart.entity"/>
+        <property name="typeAliasesPackage" value="com.example.entity"/>
         <!--扫描sql配置文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
@@ -45,6 +45,6 @@
         <!--注入sqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="com.smart.dao"/>
+        <property name="basePackage" value="com.example.dao"/>
     </bean>
 </beans>
